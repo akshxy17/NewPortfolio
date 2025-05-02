@@ -3,70 +3,78 @@ document.addEventListener('DOMContentLoaded', function() {
     const skills = [
         {
             name: "HTML",
-            icon: "fab fa-html5",
+            icon: "fab fa-html5 text-danger",
             description: "Proficient in creating semantic HTML5 markup for modern web applications.",
             proficiency: 95
         },
         {
             name: "CSS",
-            icon: "fab fa-css3-alt",
+            icon: "fab fa-css3-alt text-info",
             description: "Expertise in CSS3, including Flexbox, Grid, and responsive design principles.",
             proficiency: 90
         },
         {
             name: "JavaScript",
-            icon: "fab fa-js",
+            icon: "fab fa-js square text-warning",
             description: "Strong understanding of vanilla JavaScript, ES6+ features, and modern JS patterns.",
             proficiency: 85
         },
         {
             name: "ReactJS",
-            icon: "fab fa-react",
+            icon: "fab fa-react text-primary",
             description: "Experience building dynamic single-page applications with React and its ecosystem.",
             proficiency: 80
         },
         {
             name: "Bootstrap",
-            icon: "fas fa-mobile-alt",
+            icon: "fab fa-bootstrap text-primary",
             description: "Skilled in using Bootstrap 5 to create responsive, mobile-first websites.",
             proficiency: 90
         },
         {
             name: "Java",
-            icon: "fab fa-java",
+            icon: "fab fa-java text-danger",
             description: "Proficient in Java programming language and object-oriented design principles.",
             proficiency: 75
         },
         {
             name: "Spring Boot",
-            icon: "fas fa-leaf",
+            icon: "fas fa-leaf text-success",
             description: "Experience developing RESTful APIs and microservices with Spring Boot.",
             proficiency: 70
         },
         {
             name: "Spring",
-            icon: "fas fa-server",
+            icon: "fas fa-server text-success",
             description: "Knowledge of Spring Framework including Spring MVC, Security, and Data.",
             proficiency: 65
         },
         {
             name: "MySQL",
-            icon: "fas fa-database",
+            icon: "fas fa-database text-primary",
             description: "Skilled in database design, SQL queries, and MySQL administration.",
             proficiency: 80
         },
         {
             name: "Git & GitHub",
-            icon: "fab fa-github",
+            icon: "fab fa-github text-dark",
             description: "Proficient in version control using Git and collaborative workflows with GitHub.",
             proficiency: 85
         },
         {
             name: "Postman",
-            icon: "fas fa-cloud",
+            icon: "fas fa-cloud text-warning",
             description: "Experience testing and documenting APIs using Postman.",
             proficiency: 75
+        },
+        {
+            name: "Eclipse",
+            icon: "fas fa-code text-dark", // Dark color for Eclipse
+            description: "Experienced in Java development and debugging with Eclipse.",
+            proficiency: 70
         }
+        
+        
     ];
 
     // Projects Data
