@@ -76,8 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "A fun and interactive FLAMES Calculator that predicts the relationship between two people based on their names.",
             images: [
                 "assets/images/skills/project/ss1.png",
-                "assets/images/skills/project/ss2.png",
-                "assets/images/projects/ecommerce-3.jpg"
+                "assets/images/skills/project/ss2.png"
             ],
             liveLink: "https://akshxy17.github.io/FLAMES/",
             githubLink: "https://github.com/akshxy17/FLAMES",
@@ -113,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/projects/api-2.jpg"
             ],
             liveLink: "https://example-api.com",
-            githubLink: "https://github.com/yourusername/restful-api",
+            githubLink: "https://github.com/akshxy17/StudentCRUD-Backend",
             category: "backend"
         }
     ];
