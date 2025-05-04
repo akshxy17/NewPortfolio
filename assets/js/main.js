@@ -101,17 +101,17 @@ document.addEventListener('DOMContentLoaded', function() {
             githubLink: "https://github.com/akshxy17/StudentCRUD-frontend",
             category: "fullstack"
         },
-        {
-            title: "Weather Dashboard",
-            description: "A weather application that displays current conditions and forecasts using data from a weather API.",
-            images: [
-                "assets/images/projects/weather-1.jpg",
-                "assets/images/projects/weather-2.jpg"
-            ],
-            liveLink: "https://example-weather.com",
-            githubLink: "https://github.com/yourusername/weather-dashboard",
-            category: "frontend"
-        },
+        // {
+        //     title: "Weather Dashboard",
+        //     description: "A weather application that displays current conditions and forecasts using data from a weather API.",
+        //     images: [
+        //         "assets/images/projects/weather-1.jpg",
+        //         "assets/images/projects/weather-2.jpg"
+        //     ],
+        //     liveLink: "https://example-weather.com",
+        //     githubLink: "https://github.com/yourusername/weather-dashboard",
+        //     category: "frontend"
+        // },
         {
             title: "RESTful API Service",
             description: "Developed a RESTful API service using Spring Boot to perform full CRUD operations with proper HTTP methods, status codes, and JSON-based communication.",
