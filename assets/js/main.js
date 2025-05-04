@@ -246,32 +246,86 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // // Contact Form Submission
+    // const contactForm = document.getElementById('contactForm');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+            
+    //         if (!this.checkValidity()) {
+    //             e.stopPropagation();
+    //             this.classList.add('was-validated');
+    //             return;
+    //         }
+            
+    //         // Simulate form submission
+    //         const feedback = document.getElementById('formFeedback');
+    //         feedback.innerHTML = `
+    //             <div class="alert alert-success alert-dismissible fade show" role="alert">
+    //                 <strong>Thank you!</strong> Your message has been sent successfully.
+    //                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    //             </div>
+    //         `;
+            
+    //         // Reset form
+    //         this.reset();
+    //         this.classList.remove('was-validated');
+    //     });
+    // }
+
     // Contact Form Submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!this.checkValidity()) {
-                e.stopPropagation();
-                this.classList.add('was-validated');
-                return;
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        if (!this.checkValidity()) {
+            e.stopPropagation();
+            this.classList.add('was-validated');
+            return;
+        }
+
+        const formData = new FormData(this);
+        const feedback = document.getElementById('formFeedback');
+
+        try {
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                feedback.innerHTML = `
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Thank you!</strong> Your message has been sent successfully.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                `;
+                this.reset();
+                this.classList.remove('was-validated');
+            } else {
+                const result = await response.json();
+                const errorMessage = result?.errors?.[0]?.message || "Something went wrong. Please try again.";
+
+                feedback.innerHTML = `
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Error:</strong> ${errorMessage}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                `;
             }
-            
-            // Simulate form submission
-            const feedback = document.getElementById('formFeedback');
+        } catch (error) {
             feedback.innerHTML = `
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>Thank you!</strong> Your message has been sent successfully.
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error:</strong> Failed to send message. Please try again later.
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             `;
-            
-            // Reset form
-            this.reset();
-            this.classList.remove('was-validated');
-        });
-    }
+        }
+    });
+}
+
 
     // Initialize tooltips
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
