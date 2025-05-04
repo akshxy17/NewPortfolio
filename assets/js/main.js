@@ -114,12 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "RESTful API Service",
-            description: "A backend service with secure authentication, data validation, and database integration.",
+            description: "Developed a RESTful API service using Spring Boot to perform full CRUD operations with proper HTTP methods, status codes, and JSON-based communication.",
             images: [
-                "assets/images/projects/api-1.jpg",
-                "assets/images/projects/api-2.jpg"
+                "assets/images/skills/project/student1.png",
+                "assets/images/skills/project/backend.png"
             ],
-            liveLink: "https://example-api.com",
+            liveLink: "https://student-crud-frontend.vercel.app/",
             githubLink: "https://github.com/akshxy17/StudentCRUD-Backend",
             category: "backend"
         }
