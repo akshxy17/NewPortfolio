@@ -91,11 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
             category: "frontend"
         },
         {
-            title: "Task Management App",
-            description: "A productivity application for managing tasks with drag-and-drop functionality and team collaboration features.",
+            title: "Student Data Management System",
+            description: "A scalable web application for managing student identities, roll numbers, and academic records with secure CRUD operations.",
             images: [
-                "assets/images/projects/taskapp-1.jpg",
-                "assets/images/projects/taskapp-2.jpg"
+                "assets/images/skills/project/student1.png",
+                "assets/images/skills/project/student2.png"
             ],
             liveLink: "https://example-taskapp.com",
             githubLink: "https://github.com/yourusername/task-management-app",
