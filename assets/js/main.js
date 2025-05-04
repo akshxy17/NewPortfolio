@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 "assets/images/skills/project/student1.png",
                 "assets/images/skills/project/student2.png"
             ],
-            liveLink: "https://example-taskapp.com",
-            githubLink: "https://github.com/yourusername/task-management-app",
-            category: "frontend"
+            liveLink: "https://student-crud-frontend.vercel.app/",
+            githubLink: "https://github.com/akshxy17/StudentCRUD-frontend",
+            category: "fullstack"
         },
         {
             title: "Weather Dashboard",
