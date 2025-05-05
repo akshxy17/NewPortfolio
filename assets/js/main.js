@@ -355,3 +355,55 @@ if (contactForm) {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on page load
 });
+
+/* Github activity */
+
+    const username = "akshxy17"; // Replace with your GitHub username
+
+    async function fetchGitHubStats() {
+        try {
+            const userRes = await fetch(`https://api.github.com/users/${username}`);
+            const reposRes = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+
+            const userData = await userRes.json();
+            const reposData = await reposRes.json();
+
+            // Repositories count
+            const repoCount = userData.public_repos;
+
+            // Total stars and commits approximation
+            let totalStars = 0;
+            let totalCommits = 0;
+
+            for (let repo of reposData) {
+                totalStars += repo.stargazers_count;
+
+                // If the repo has a valid commits_url, fetch commits
+                const commitsRes = await fetch(repo.commits_url.replace("{/sha}", ""));
+                const commits = await commitsRes.json();
+                totalCommits += Array.isArray(commits) ? commits.length : 0;
+            }
+
+            // Contributions (basic fallback, you can also use GitHub GraphQL for real counts)
+            const contributions = totalCommits; // Approximate
+
+            // Update DOM
+            document.querySelectorAll(".stat-box .counter")[0].setAttribute("data-target", repoCount);
+            document.querySelectorAll(".stat-box .counter")[0].textContent = repoCount;
+
+            document.querySelectorAll(".stat-box .counter")[1].setAttribute("data-target", totalCommits);
+            document.querySelectorAll(".stat-box .counter")[1].textContent = totalCommits;
+
+            document.querySelectorAll(".stat-box .counter")[2].setAttribute("data-target", totalStars);
+            document.querySelectorAll(".stat-box .counter")[2].textContent = totalStars;
+
+            document.querySelectorAll(".stat-box .counter")[3].setAttribute("data-target", contributions);
+            document.querySelectorAll(".stat-box .counter")[3].textContent = contributions;
+
+        } catch (error) {
+            console.error("GitHub API fetch failed:", error);
+        }
+    }
+
+    fetchGitHubStats();
+fetchGitHubStats();
